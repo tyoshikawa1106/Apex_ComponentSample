@@ -1,0 +1,43 @@
+<apex:component Controller="ComponentSampleSubController">
+	
+	<apex:attribute name="objAccount" type="Account" assignTo="{!subAccount}" description="" />
+	<apex:attribute name="objContacts" type="Contact[]" assignTo="{!subContacts}" description="" />
+	<apex:attribute name="str" type="String" assignTo="{!subStr}" description="" />
+	<apex:attribute name="num" type="Integer" assignTo="{!subNum}" description="" />
+	<apex:attribute name="day" type="Date" assignTo="{!subDay}" description="" />
+	<apex:attribute name="dayTime" type="DateTime" assignTo="{!subDayTime}" description="" />
+	<apex:attribute name="Ctrl" type="ComponentSampleAssistController" assignTo="{!subCtrl}" description="" />
+	
+	<apex:pageBlock mode="detail">
+		<apex:pageMessages />
+		<apex:pageBlockSection title="sObject" columns="1" collapsible="false">
+			<apex:outputText value="{!subAccount.Id}" />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="List<sObject>" columns="1" collapsible="false">
+			<apex:pageBlockTable value="{!subContacts}" var="item">
+				<apex:column headerValue="{!$ObjectType.Contact.Fields.Name.Label}">
+					<apex:outputText value="{!item.Name}" />
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="String" columns="1" collapsible="false">
+			<apex:outputText value="{!subStr}" />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Integer" columns="1" collapsible="false">
+			<apex:outputText value="{!subNum}" />
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Date" columns="1" collapsible="false">
+			<apex:outputText value=" {0,date,yyyy/MM/dd}">
+		       <apex:param value="{!subDay}" />
+		   </apex:outputText>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="DateTime" columns="1" collapsible="false">
+			<apex:outputText value=" {0,date,yyyy/MM/dd hh:mm:ss}">
+		       <apex:param value="{!subDayTime}" />
+		   </apex:outputText>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Controller" columns="1" collapsible="false">
+			<apex:outputText value="{!subCtrl.msg}" />
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:component>

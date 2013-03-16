@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="ComponentSampleController" title="ComponentSample" showHeader="true" sidebar="false">
+	<apex:sectionHeader title="Force.com" subTitle="Component Sample" />
+	<apex:form >
+		<c:ComponentSampleSub objAccount="{!objAccount}"
+			objContacts="{!objContacts}"
+			str="{!str}"
+			num="{!num}"
+			day="{!day}"
+			dayTime="{!dayTime}"
+			ctrl="{!ctrl}"
+		/>
+	</apex:form>
+</apex:page>
