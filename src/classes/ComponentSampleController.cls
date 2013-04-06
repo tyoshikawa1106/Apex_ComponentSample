@@ -12,9 +12,9 @@
 public with sharing class ComponentSampleController {
 	
 	// 取引先
-	public Account objAccount {get; set;}
+	public Account account {get; set;}
 	// 取引先責任者
-	public List<Contact> objContacts {get; set;}
+	public List<Contact> contacts {get; set;}
 	// 文字列
 	public String str {get; set;}
 	// 数値
@@ -36,14 +36,14 @@ public with sharing class ComponentSampleController {
 		System.debug('◆◆◆◆ComponentSampleController:START');
 		
 		// 取引先
-		this.objAccount = (Account)prmStandard.getRecord();
-		if (String.isEmpty(this.objAccount.Id) == true) {
+		this.account = (Account)prmStandard.getRecord();
+		if (String.isEmpty(this.account.Id) == true) {
 			ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, '取引先の取得に失敗しました。'));
 			return;
 		}
 		// 取引先責任者
-		this.objContacts = getContact(prmStandard.getId());
-		if (this.objContacts.isEmpty() == true) {
+		this.contacts = getContact(prmStandard.getId());
+		if (this.contacts.isEmpty() == true) {
 			ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.WARNING, '取引先責任者：0件'));
 		}
 		// 文字列

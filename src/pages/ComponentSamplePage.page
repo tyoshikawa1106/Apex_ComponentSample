@@ -1,8 +1,8 @@
 <apex:page standardController="Account" extensions="ComponentSampleController" title="ComponentSample" showHeader="true" sidebar="false" id="page">
 	<apex:sectionHeader title="Force.com" subTitle="Component Sample" />
 	<apex:form id="form">
-		<c:ComponentSampleSub sampleAccount="{!objAccount}"
-			sampleContacts="{!objContacts}"
+		<c:ComponentSampleSub sampleAccount="{!account}"
+			sampleContacts="{!contacts}"
 			sampleStr="{!str}"
 			sampleNum="{!num}"
 			sampleDay="{!day}"

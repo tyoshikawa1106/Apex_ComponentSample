@@ -20,10 +20,10 @@ private class ComponentSampleControllerTest {
         System.debug('◆◆◆◆ComponentSampleControllerTest1:START');
         
         // ユーザ
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
 	        PageReference pageRef = getPageReference();
@@ -34,7 +34,7 @@ private class ComponentSampleControllerTest {
             
             // コンストラクタ
             ComponentSampleController cls = new ComponentSampleController(new ApexPages.StandardController(new Account()));
-            System.assertEquals(String.isEmpty(cls.objAccount.Id), true);
+            System.assertEquals(String.isEmpty(cls.account.Id), true);
             
             // テスト終了
             Test.stopTest();
@@ -51,13 +51,13 @@ private class ComponentSampleControllerTest {
         System.debug('◆◆◆◆ComponentSampleControllerTest2:START');
         
         // ユーザ
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
         	
         	// 取引先テストデータ作成
-        	Account objAccount = createAccount();
+        	Account account = createAccount();
             
             // カレントページにパラメータを設定
 	        PageReference pageRef = getPageReference();
@@ -67,8 +67,8 @@ private class ComponentSampleControllerTest {
             Test.startTest();
             
             // コンストラクタ
-            ComponentSampleController cls = new ComponentSampleController(new ApexPages.StandardController(objAccount));
-            System.assertEquals(String.isEmpty(cls.objAccount.Id), false);
+            ComponentSampleController cls = new ComponentSampleController(new ApexPages.StandardController(account));
+            System.assertEquals(String.isEmpty(cls.account.Id), false);
             
             // テスト終了
             Test.stopTest();
@@ -97,18 +97,15 @@ private class ComponentSampleControllerTest {
 	private static Account createAccount() {
 		System.debug('◆◆◆◆createAccount:START');
 		
-		// 取引先
-		Account objAccount = new Account();
-		// 取引先名
-		objAccount.Name = 'Name';
-		// 取引先番号
-		objAccount.AccountNumber = 'A-0000';
-		// 取引先 部門
-		objAccount.Site = 'Site';
-		// INSERT
-		insert objAccount;
+		Account account = new Account(
+			 Name = 'Name'
+			,AccountNumber = 'A-0000'
+			,Site = 'Site'
+		);
+		
+		insert account;
 		
 		System.debug('◆◆◆◆createAccount:END');
-		return objAccount;
+		return account;
 	}
 }
