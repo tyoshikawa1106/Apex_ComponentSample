@@ -1,5 +1,5 @@
 /*
- * コンポーネントサンプルアシスト・コントローラークラス
+ * コンポーネントサンプル
  * © 2013 Force.com Developer
  * ----------------------------------------
  * @createdDate      : 2013/01/01
@@ -11,6 +11,7 @@
  */
 public with sharing class ComponentSampleAssistController {
 	
+	public static final String LABEL = 'ComponentSampleAssist';
 	public String msg {get; set;}
 	
 	/*
@@ -21,7 +22,7 @@ public with sharing class ComponentSampleAssistController {
 	public ComponentSampleAssistController() {
 		System.debug('◆◆◆◆ComponentSampleAssistController:START');
 		
-		this.msg = 'ComponentSampleAssist';
+		this.msg = LABEL;
 		
 		System.debug('◆◆◆◆ComponentSampleAssistController:END');
 	}

@@ -20,10 +20,10 @@ private class ComponentSampleAssistControllerTest {
         System.debug('◆◆◆◆ComponentSampleAssistControllerTest:START');
         
         // ユーザ
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
 	        PageReference pageRef = getPageReference();
@@ -34,6 +34,7 @@ private class ComponentSampleAssistControllerTest {
             
             // コンストラクタ
             ComponentSampleAssistController cls = new ComponentSampleAssistController();
+            System.assertEquals(cls.msg, ComponentSampleAssistController.LABEL);
             
             // テスト終了
             Test.stopTest();

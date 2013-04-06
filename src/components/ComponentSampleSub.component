@@ -1,12 +1,12 @@
 <apex:component Controller="ComponentSampleSubController">
 	
-	<apex:attribute name="objAccount" type="Account" assignTo="{!subAccount}" description="" />
-	<apex:attribute name="objContacts" type="Contact[]" assignTo="{!subContacts}" description="" />
-	<apex:attribute name="str" type="String" assignTo="{!subStr}" description="" />
-	<apex:attribute name="num" type="Integer" assignTo="{!subNum}" description="" />
-	<apex:attribute name="day" type="Date" assignTo="{!subDay}" description="" />
-	<apex:attribute name="dayTime" type="DateTime" assignTo="{!subDayTime}" description="" />
-	<apex:attribute name="Ctrl" type="ComponentSampleAssistController" assignTo="{!subCtrl}" description="" />
+	<apex:attribute name="sampleAccount" type="Account" assignTo="{!subAccount}" description="" />
+	<apex:attribute name="sampleContacts" type="Contact[]" assignTo="{!subContacts}" description="" />
+	<apex:attribute name="sampleStr" type="String" assignTo="{!subStr}" description="" />
+	<apex:attribute name="sampleNum" type="Integer" assignTo="{!subNum}" description="" />
+	<apex:attribute name="sampleDay" type="Date" assignTo="{!subDay}" description="" />
+	<apex:attribute name="sampleDayTime" type="DateTime" assignTo="{!subDayTime}" description="" />
+	<apex:attribute name="sampleCtrl" type="ComponentSampleAssistController" assignTo="{!subCtrl}" description="" />
 	
 	<apex:pageBlock mode="detail">
 		<apex:pageMessages />

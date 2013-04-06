@@ -1,5 +1,5 @@
 /*
- * コンポーネントサンプルサブ・テストクラス
+ * コンポーネントサンプル
  * © 2013 Force.com Developer
  * ----------------------------------------
  * @createdDate      : 2013/01/01
@@ -20,10 +20,10 @@ private class ComponentSampleSubControllerTest {
         System.debug('◆◆◆◆ComponentSampleSubControllerTest1:START');
         
         // ユーザ
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
 	        PageReference pageRef = getPageReference();
